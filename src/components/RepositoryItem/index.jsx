@@ -1,5 +1,5 @@
 import { View, StyleSheet } from "react-native";
-import theme from "../../theme";
+import theme from "../../utils/theme";
 import TopItem from "./TopItem";
 import BotItem from "./BotItem";
 const styles = StyleSheet.create({
@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
 });
 
 const RepositoryItem = ({ repo }) => (
-  <View style={styles.container}>
+  <View testID="repositoryItem" style={styles.container}>
     <TopItem repo={repo}></TopItem>
     <BotItem repo={repo}></BotItem>
   </View>

@@ -1,9 +1,9 @@
 import { StyleSheet, View } from "react-native";
 import RepositoryList from "./components/RepositoryList ";
 import AppBar from "./components/AppBar";
-import theme from "./theme";
-import SignInForm from "./components/SignInMain";
+import theme from "./utils/theme";
 import { Routes, Route, Navigate } from "react-router-native";
+import SignInFormIndex from "./components/signIn/index";
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
@@ -18,7 +18,7 @@ const Main = () => {
       <AppBar> </AppBar>
       <Routes>
         <Route path="/" element={<RepositoryList />} exact />{" "}
-        <Route path="/SignIn" element={<SignInForm />} exact />
+        <Route path="/SignIn" element={<SignInFormIndex />} exact />
         <Route path="*" element={<Navigate to="/" replace />} />{" "}
       </Routes>
     </View>

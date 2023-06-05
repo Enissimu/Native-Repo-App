@@ -1,4 +1,4 @@
-import Text from "./Text";
+import Text from "../Text";
 import FormikTextInput from "./FormikTextInput";
 import { View, StyleSheet, Pressable } from "react-native";
 
@@ -12,6 +12,10 @@ const styles = StyleSheet.create({
 });
 
 const SignIn = ({ onSubmit }) => {
+  const handle = () => {
+    console.log("CLICKED");
+    onSubmit();
+  };
   return (
     <View style={styles.container}>
       <FormikTextInput name="username" placeholder="Username"></FormikTextInput>
@@ -20,7 +24,7 @@ const SignIn = ({ onSubmit }) => {
         name="password"
         placeholder="Password"
       ></FormikTextInput>
-      <Pressable style={styles.container} onPress={onSubmit}>
+      <Pressable style={styles.container} onPress={handle}>
         <Text style={styles.item}>Sign In</Text>
       </Pressable>
     </View>
