@@ -1,7 +1,6 @@
 import Text from "../Text";
-import FormikTextInput from "./FormikTextInput";
 import { View, StyleSheet, Pressable } from "react-native";
-
+import FormikTextInput from "../FormikTextInput";
 const styles = StyleSheet.create({
   container: {
     alignContent: "center",
@@ -13,7 +12,6 @@ const styles = StyleSheet.create({
 
 const SignIn = ({ onSubmit }) => {
   const handle = () => {
-    console.log("CLICKED");
     onSubmit();
   };
   return (

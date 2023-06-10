@@ -7,14 +7,17 @@ import { useAuthorization } from "../../hooks/useAutharization";
 import { useApolloClient } from "@apollo/client";
 import { useNavigate } from "react-router-native";
 
-// const loginValidationSchema = yup.object().shape({
-//   email: yup.string().required("Username is Required").nullable(),
-//   password: yup.string().required("Password is required"),
-// });
+const loginValidationSchema = yup.object().shape({
+  username: yup.string().required("Username is Required"),
+  password: yup
+    .string()
+    .min(8, "Password lenght must be longer than 8 characters")
+    .required("Password is required"),
+});
 
 const initialValues = {
-  username: "",
-  password: "",
+  username: "gorkem",
+  password: "123456789",
 };
 
 export const SignInContainer = ({ onSubmit }) => {
@@ -22,7 +25,7 @@ export const SignInContainer = ({ onSubmit }) => {
     <View>
       <Formik
         initialValues={initialValues}
-        // validationSchema={loginValidationSchema}
+        validationSchema={loginValidationSchema}
         onSubmit={onSubmit}
       >
         {({ handleSubmit }) => <SignIn onSubmit={handleSubmit} />}

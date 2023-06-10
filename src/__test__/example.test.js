@@ -56,10 +56,16 @@ describe("RepositoryList", () => {
 
       const repositoryItems = screen.getAllByTestId("repositoryItem");
       const [firstRepositoryItem, secondRepositoryItem] = repositoryItems;
-      // console.log(
+
+      expect(
+        within(secondRepositoryItem).getByText("Javascript", { exact: false })
+      ).toBeDefined();
+      expect(
+        within(firstRepositoryItem).getByText("TypeScript", { exact: false })
+      ).toBeDefined();
+      // expect(
       //   within(secondRepositoryItem).getByText("Javascript", { exact: false })
       // );
-      expect(1).toBe(1);
     });
   });
 
@@ -71,7 +77,6 @@ describe("RepositoryList", () => {
         const credents = { username: "kalle", password: "password" };
 
         render(<SignInContainer onSubmit={mockFn}> </SignInContainer>);
-        screen.debug();
         const usernameInput = screen.getByPlaceholderText("Username");
         const passwordInput = screen.getByPlaceholderText("Password");
 

@@ -36,7 +36,7 @@ const AppBar = () => {
         {/* ... */}
         <Link to={"/"} style={styles.item}>
           <Text color={"primary"} fontSize={"subheading"} fontWeight={"bold"}>
-            Rate Repository Application
+            Repositories
           </Text>
         </Link>
 
@@ -47,11 +47,23 @@ const AppBar = () => {
             </Text>
           </Link>
         ) : (
-          <Pressable onPress={logOut}>
-            <Text color="primary" fontSize={"subheading"} fontWeight={"bold"}>
-              Log out
-            </Text>
-          </Pressable>
+          <View style={styles.tabContainer}>
+            <Link to={"/CreateReview"} style={styles.item}>
+              <Text
+                color={"primary"}
+                fontSize={"subheading"}
+                fontWeight={"bold"}
+              >
+                Create a review
+              </Text>
+            </Link>
+
+            <Pressable onPress={logOut}>
+              <Text color="primary" fontSize={"subheading"} fontWeight={"bold"}>
+                Log out
+              </Text>
+            </Pressable>
+          </View>
         )}
       </ScrollView>
     </View>
