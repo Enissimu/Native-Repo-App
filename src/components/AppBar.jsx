@@ -41,13 +41,37 @@ const AppBar = () => {
         </Link>
 
         {data.me === null ? (
-          <Link to={"/SignIn"} style={styles.item}>
-            <Text color={"primary"} fontSize={"subheading"} fontWeight={"bold"}>
-              Sign In
-            </Text>
-          </Link>
+          <View style={styles.tabContainer}>
+            <Link to={"/SignIn"} style={styles.item}>
+              <Text
+                color={"primary"}
+                fontSize={"subheading"}
+                fontWeight={"bold"}
+              >
+                Sign In
+              </Text>
+            </Link>
+            <Link to={"/SignUp"} style={styles.item}>
+              <Text
+                color={"primary"}
+                fontSize={"subheading"}
+                fontWeight={"bold"}
+              >
+                Sign Up
+              </Text>
+            </Link>
+          </View>
         ) : (
           <View style={styles.tabContainer}>
+            <Link to={"/MyReviews"} style={styles.item}>
+              <Text
+                color={"primary"}
+                fontSize={"subheading"}
+                fontWeight={"bold"}
+              >
+                My reviews
+              </Text>
+            </Link>
             <Link to={"/CreateReview"} style={styles.item}>
               <Text
                 color={"primary"}

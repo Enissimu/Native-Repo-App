@@ -20,7 +20,6 @@ const RepositoryItem = ({ repo }) => {
   const naviTheGate = () => {
     navigate(`/${repo.id}`);
   };
-
   return (
     <Pressable onPress={naviTheGate}>
       <View testID="repositoryItem" style={styles.container}>

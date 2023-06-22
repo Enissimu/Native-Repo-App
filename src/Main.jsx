@@ -6,6 +6,8 @@ import { Routes, Route, Navigate } from "react-router-native";
 import SignInFormIndex from "./components/signIn/index";
 import ReviewIndex from "./components/RepositoryItem/singleItem";
 import CreateReviewFormIndex from "./components/createReview";
+import SignUpFormIndex from "./components/signUp";
+import MyReviews from "./components/Myreview";
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
@@ -22,9 +24,9 @@ const Main = () => {
         <Route path="/" element={<RepositoryList />} exacts></Route>
         <Route path="/:repoId" element={<ReviewIndex />} />
         <Route path="/SignIn" element={<SignInFormIndex />} exact />
-        <Route path="/CreateReview" element={<CreateReviewFormIndex />}>
-          {" "}
-        </Route>
+        <Route path="/SignUp" element={<SignUpFormIndex />} exact />
+        <Route path="/MyReviews" element={<MyReviews />} exact />
+        <Route path="/CreateReview" element={<CreateReviewFormIndex />}></Route>
         <Route path="*" element={<Navigate to="/" replace />} />{" "}
       </Routes>
     </View>

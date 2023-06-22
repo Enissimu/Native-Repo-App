@@ -1,7 +1,6 @@
 import Text from "../../Text";
-import { StyleSheet } from "react-native-web";
 import theme from "../../../utils/theme";
-import { View } from "react-native";
+import { View, StyleSheet } from "react-native";
 import formatISO from "date-fns/formatISO";
 import format from "date-fns/format";
 const styles = StyleSheet.create({
@@ -41,6 +40,7 @@ const ReviewItem = ({ review }) => {
         <Text fontWeight={"bold"} fontSize={"subheading"}>
           {review.user.username}
         </Text>
+
         <Text color="textSecondary">
           {format(
             new Date(

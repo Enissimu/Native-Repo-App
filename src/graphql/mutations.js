@@ -8,10 +8,24 @@ export const LOG_IN = gql`
   }
 `;
 
+export const SIGN_UP = gql`
+  mutation Mutation($user: CreateUserInput) {
+    createUser(user: $user) {
+      username
+    }
+  }
+`;
+
 export const SEND_REVIEW = gql`
   mutation Mutation($review: CreateReviewInput) {
     createReview(review: $review) {
       repositoryId
     }
+  }
+`;
+
+export const DELETE_REVIEW = gql`
+  mutation Mutation($deleteReviewId: ID!) {
+    deleteReview(id: $deleteReviewId)
   }
 `;
